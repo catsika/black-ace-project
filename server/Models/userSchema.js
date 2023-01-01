@@ -37,7 +37,8 @@ const userSchema = new mongoose.Schema({
     age:{
         type:Number,
         required:false 
-    }
+    },
+    feed:[{type:mongoose.Types.ObjectId,ref:"Feed",required:true}]
 },{
     timestamps:true
 })
