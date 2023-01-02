@@ -38,7 +38,10 @@ const userSchema = new mongoose.Schema({
         type:Number,
         required:false 
     },
-    feed:[{type:mongoose.Types.ObjectId,ref:"Feed",required:true}]
+    feed:[{type:mongoose.Types.ObjectId,ref:"Feed",required:false}],
+
+    followers:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
+    following:[{type:mongoose.Types.ObjectId,ref:"User",required:false}]
 },{
     timestamps:true
 })
