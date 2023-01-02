@@ -73,9 +73,9 @@ const register = async (req,res,next) =>{
         if (user && (await bcrypt.compare(password,user.password))){
         res.json({
             _id : user.id,
-            username :user.name,
+            username :user.username,
             email : user.email,
-            feed: user.feed,
+          
            
         })
         }else{
