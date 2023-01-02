@@ -11,14 +11,14 @@ const feedSchema = new mongoose.Schema({
     },
     image:{
         type:String,
-        required:true,
+        required:false,
     },
     user:{
         type:mongoose.Types.ObjectId,
         ref:"User",
         required:true,
     },
-    comments:[{type:mongoose.Types.ObjectId,ref:"User",required:true}],
+    comments:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
     likes:{
         type:Number,
 
@@ -26,7 +26,7 @@ const feedSchema = new mongoose.Schema({
     tags:{
         type:mongoose.Types.ObjectId,
         ref:"User",
-        required:true,
+        required:false,
     }
 },{
     timestamps:true
