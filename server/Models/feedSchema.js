@@ -24,7 +24,9 @@ const feedSchema = new mongoose.Schema({
 
     },
     tags:{
-        type:Array,
+        type:mongoose.Types.ObjectId,
+        ref:"User",
+        required:true,
     }
 },{
     timestamps:true
