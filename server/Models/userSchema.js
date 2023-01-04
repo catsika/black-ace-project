@@ -41,7 +41,9 @@ const userSchema = new mongoose.Schema({
     feed:[{type:mongoose.Types.ObjectId,ref:"Feed",required:false}],
 
     followers:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
-    following:[{type:mongoose.Types.ObjectId,ref:"User",required:false}]
+    following:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
+
+    community:[{type:mongoose.Types.ObjectId,ref:"Community",required:false}],
 },{
     timestamps:true
 })
