@@ -2,12 +2,26 @@ const User = require('../Models/userSchema')
 const CreateCom = require('../Models/createCommunity')
 const communityPost = require('../Models/communityPost')
 const mongoose = require('mongoose')
+const Member = require('../Models/comunityMem')
 
 const getCommunity = async (req,res) => {
-    const comId = req.params.id;
+    
     const communities = await CreateCom.find({community:CreateCom})
     res.status(200).json(communities)
 }
+
+const getCommunityById = async (req,res) => {
+  const comId = req.params.id;
+  const communityId = await CreateCom.findById({_id:comId})
+  if(!communityId){
+    res.status(404).send("community not found")
+  }else{
+    res.status(200).json(communityId)
+  }
+}
+
+
+
 const addCommunity = async (req,res) => {
     const {name,description,posts,members,user} = req.body
     let existingUser;
@@ -118,12 +132,50 @@ com
    return res.status(201).json(post)
 }
 
+const communityMember = async (req,res) => {
+  const {name,user} = req.body
+
+  let communitymember;
+  try{
+    communitymember = await CreateCom.findById(name) 
+  }catch (error){
+    console.log(error)
+   
+  }
+  if(!communitymember){
+    return res.status(404).json({message:"community not found"})
+  }
+
+  const members = new Member({
+    //name refers to the community's name
+    name,
+    //user refers to the name of the member of the community
+    user
+  })
+  const member = members.user
+
+  try {
+    const session = await mongoose.startSession()
+    session.startTransaction()
+    await members.save({session})
+    communitymember.members.push(member)
+    await communitymember.save({session})
+    await session.commitTransaction()
+ } catch (error) {
+     console.log(error)
+     res.status(400).json({error:error})
+ }
+ return res.status(201).json(members)
+}
+
 module.exports = {
 getCommunity,
+getCommunityById,
 addCommunity,
 updateCommunity,
 deleteCommunity,
 addCommunityPost,
-getCommunityPosts
+getCommunityPosts,
+communityMember,
 
 }
