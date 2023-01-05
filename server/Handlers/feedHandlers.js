@@ -74,17 +74,12 @@ res.status(200).json(feed)
 
 const getById = async (req,res,next) => {
     const id = req.params.id
-    let feed;
-    try {
-        feed = await feed.findById(id)
-    } catch (error) {
-        console.log(error)
+    const feed = await Feed.findById({_id:id})
+    if (!feed){
+      return res.status(404).json({message:"feed not found"})
+    }else{
+      res.status(200).json(feed)
     }
-
-    if(!feed){
-        return res.status(404).send('post not found')
-    }
-    return res.status(200).json({feed})
 
 }
 const deleteFeed = async (req,res,next) => {
@@ -148,16 +143,8 @@ const deleteFeed = async (req,res,next) => {
  return res.status(201).json(comment)
   }
   const getComments = async (req, res) => {
-    try {
-      const postId = req.params.id;
-      const postComments = await Comment.findById(postId).populate("comment");
-      if (!postComments) {
-        return res.status(404).json({ message: "No comments found for this post" });
-      }
-      return res.status(200).json(postComments);
-    } catch (error) {
-      return res.status(500).json({ message: "Error retrieving comments" });
-    }
+  const comments = await Comment.find({comment:Comment})
+  res.status(200).json(comments)
   };
   
 
