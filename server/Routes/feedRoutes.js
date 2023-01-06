@@ -7,6 +7,6 @@ router.get('/:id',getById)
 router.delete('/:id',deleteFeed)
 router.get('/user/:id',getByUserId)
 router.post('/commentfeed/',addComment)
-router.get('/posts/:id',getComments)
+router.get('/comments',getComments)
 
 module.exports = router
