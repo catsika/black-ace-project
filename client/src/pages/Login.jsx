@@ -1,6 +1,36 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import {useState} from'react'
+import axios from 'axios'
+import {toast} from 'react-toastify'
+
 
 const Login = () => {
+  const [password,setpassword]=useState('')
+  const [email,setEmail]=useState('')
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+   axios.post('http://localhost:5000/api/users/login/',{
+    email,
+    password,
+
+  })
+  .then((res)=>{console.log(res.data)
+    toast.success('login successful')
+  if(res.data){
+    localStorage.setItem("userInfo",JSON.stringify(res.data))
+    navigate("/feed");
+   }
+   setpassword('')
+   setEmail('')
+  }
+
+  )
+  .catch((err)=>{
+    toast.error(err.response.data)
+  })
+}
   return (
     <div className='Login'>
         <div className="intro">
@@ -9,19 +39,26 @@ const Login = () => {
         </div>
      <div className="login-form">
   <div className="param">
- <form >
+ <form onSubmit={handleSubmit}>
  <div className="email">
-    <input type="email" name="" id="" placeholder='Enter Email..' className='email' />
+    <input type="email"  placeholder='Enter Email..' className='email'
+     value={email} onChange={(e)=>setEmail(e.target.value)}
+    />
     </div>
     <br />
     <div className="password">
-      <input type="password" name="" id="" placeholder='Enter Password...' className='password'/>
+      <input type="password"  placeholder='Enter Password...' className='password'
+        value={password} onChange={(e)=>setpassword(e.target.value)}
+      />
     </div>
- </form>
     <br />
-<div className="submit">
+    <br />
+    <button type='Submit' className="submit">
     Log In
-</div>
+</button>
+ </form>
+   
+
 <div className="forgot">
 <a  href="/">forgot password ?</a>
 </div>
