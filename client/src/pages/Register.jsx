@@ -11,7 +11,7 @@ const Register = () => {
   const [profile,setPofile]=useState('')
   const [bio,setBio]=useState('')
   const [city,setCity]=useState('')
-  const [age,setAge]=useState('')
+  const [birthDate,setBirthDate]=useState('')
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const Register = () => {
     profileImage:profile,
     Bio:bio,
     city,
-    age
+    birthDate
   })
   .then((res)=>{
     console.log(res.data)
@@ -40,7 +40,7 @@ const Register = () => {
      setPofile('')
      setBio('')
      setCity('')
-     setAge('')
+     setBirthDate('')
   }
   
   )
@@ -91,8 +91,8 @@ const Register = () => {
     </div>
     <br />
     <div className="age">
-    <input type="number"  placeholder='Enter age..' className='age'
-    value={age} onChange={(e)=>setAge(e.target.value)}
+    <input type="date"  placeholder='Enter age..' className='age'
+    value={birthDate} onChange={(e)=>setBirthDate(e.target.value)}
     />
     </div>
 <br />
@@ -119,7 +119,7 @@ Create Account
  </form>
     
 
-<p className='link'>already have an account ? <a   href="/">Login</a></p>
+<p className='link'>already have an account ? <a href="/">Login</a></p>
 <hr />
 
 

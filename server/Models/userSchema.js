@@ -5,10 +5,6 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    fullName:{
-        type:String,
-        required:false
-    },
     email:{
         type:String,
         required:true
@@ -26,24 +22,37 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:false   
     },
-    country:{
-        type:String,
-        required:false 
-    },
+ 
     city:{
         type:String,
         required:false 
     },
-    age:{
-        type:Number,
+    birthDate:{
+        type:String,
         required:false 
     },
-    feed:[{type:mongoose.Types.ObjectId,ref:"Feed",required:false}],
+    feed:{
+        type:Array,
+        ref:"Feed",
+        required:false
+    },
 
-    followers:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
-    following:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
+    followers:{
+        type:Array,
+        ref:"User",
+        required:false
+    },
+    following:{
+        type:Array,
+        ref:"User",
+        required:false
+    },
 
-    community:[{type:mongoose.Types.ObjectId,ref:"Community",required:false}],
+    community:{
+        type:Array,
+        ref:"Community",
+        required:false
+    },
 },{
     timestamps:true
 })

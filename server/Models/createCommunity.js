@@ -9,10 +9,16 @@ const createCommunitySchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    posts:[{type:mongoose.Types.ObjectId,ref:"CommunityPosts",required:false}],
-    members:[{type:mongoose.Types.ObjectId,ref:"Community",required:false}],
+    posts:{
+        type:Array,
+        ref:"CommunityPosts",
+        required:false},
+    members:{
+        type:Array,
+        ref:"Community",
+        required:false},
     user:{
-        type:mongoose.Types.ObjectId,
+        type:Array,
         ref:"User",
         required:true,
     },

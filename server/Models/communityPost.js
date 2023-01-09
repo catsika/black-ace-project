@@ -14,7 +14,7 @@ const communityPostSchema = new mongoose.Schema({
         required:false
     },
     com:{
-        type:mongoose.Types.ObjectId,
+        type:Array,
         ref:"Community",
         required:true,
     },

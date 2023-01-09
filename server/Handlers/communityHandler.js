@@ -110,7 +110,7 @@ const addCommunityPost = async (req,res) => {
     return res.status(400).json({message:"community not found"})
   }
 
-  const post = await new communityPost({
+  const post = new communityPost({
 title,
 body,
 image,
