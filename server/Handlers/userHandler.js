@@ -15,14 +15,14 @@ const getUsers = async (req,res,next) => {
   return res.status(200).json(users)
 }
 const register = async (req,res,next) =>{
-    const {username,email,password,profileImage,fullName,country,city,age,Bio,followers,following} = req.body
+    const {username,email,password,profileImage,city,birthDate,Bio,followers,following} = req.body
     
     if(!username || !email  || !password){
         res.status(400).send('Please add all fields')
     }
     
     //check if user exists
-    const userExists = await User.findOne({email})
+    const userExists = await User.find({email})
     
     if (userExists){
         res.status(400).send('user already exists') 
@@ -39,10 +39,8 @@ const register = async (req,res,next) =>{
         email,
         password:hashedPassword,
         profileImage,
-        fullName,
-        country,
         city,
-        age,
+        birthDate,
         Bio,
         followers,
         following,
@@ -75,6 +73,13 @@ const register = async (req,res,next) =>{
             _id : user.id,
             username :user.username,
             email : user.email,
+            feed:user.feed,
+            profileImage:user.profileImage,
+            city:user.city,
+            birth:user.birthDate,
+            Bio:user.Bio,
+            followers:user.followers,
+            following:user.following
           
            
         })

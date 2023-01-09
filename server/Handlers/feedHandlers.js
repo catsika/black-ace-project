@@ -18,7 +18,7 @@ const getFeed = async (req,res) => {
       return res.status(200).json(feeds)
 }
 const postFeed = async (req,res) => {
-    const {title,description,image,user,comments,likes,tags,} = req.body
+    const {description,image,user,comments,likes,tags,} = req.body
 
     let existingUser;
     try {
@@ -31,7 +31,7 @@ const postFeed = async (req,res) => {
     }
 
     const feed = await new Feed({
-        title,
+        
         description,
         image,
         user,

@@ -4,7 +4,9 @@ import axios from 'axios'
 import {toast} from 'react-toastify'
 
 
+
 const Login = () => {
+  
   const [password,setpassword]=useState('')
   const [email,setEmail]=useState('')
   const navigate = useNavigate();
@@ -60,11 +62,12 @@ const Login = () => {
    
 
 <div className="forgot">
-<a  href="/">forgot password ?</a>
+<a  href="/forgot">forgot password ?</a>
 </div>
 <hr />
 <div className="create">
-<a className='form-link' href="/register">Create Account </a>
+<a href="/register" className='lik'>Create Account</a>
+
 </div>
   </div>
      </div>

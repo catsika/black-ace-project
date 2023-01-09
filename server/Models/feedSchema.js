@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
 const feedSchema = new mongoose.Schema({
-    title:{
-        type:String,
-        required:true,
-    },
     description:{
         type:String,
         required:true,
@@ -14,17 +10,22 @@ const feedSchema = new mongoose.Schema({
         required:false,
     },
     user:{
-        type:mongoose.Types.ObjectId,
+        type:Array,
         ref:"User",
         required:true,
     },
-    comments:[{type:mongoose.Types.ObjectId,ref:"User",required:false}],
+    comments:{
+        type: Array,
+        ref:"User",
+       required:false
+    },
+
     likes:{
         type:Number,
 
     },
     tags:{
-        type:mongoose.Types.ObjectId,
+        type:Array,
         ref:"User",
         required:false,
     }

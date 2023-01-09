@@ -6,17 +6,20 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Feed from "./pages/Feed";
 import ErrorPage from './components/Error'
+import Profile from './pages/ProfilePage';
 
 function App() {
   return (
     <div>
-<BrowserRouter>
+
 <ToastContainer position='top-center'/>
+<BrowserRouter>
 <Navbar/>
 <Routes>
   <Route path='/' element={<Login/>} />
   <Route path='/register' element={<Register/>} />
   <Route path='/feed' element={<Feed/>}/>
+  <Route path='/profile' element={<Profile/>}/>
   <Route path='*' element={<ErrorPage/>}/>
 </Routes>
 </BrowserRouter>
