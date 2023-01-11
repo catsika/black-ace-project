@@ -26,10 +26,10 @@ axios.get('http://localhost:5000/api/feed')
   <input type="text" placeholder='whats on your mind ?' className='post-field'/>
   <hr className='hr' />
 
-<ul>
-  <li><CgFeed/> Feed</li>
-  <li><RiCommunityLine/> Community</li>
-  <li><FaVideo/>  Live</li>
+<ul className='feed-links'>
+  <li className='feed-link'><CgFeed/> Feed</li>
+  <li className='feed-link'><RiCommunityLine/> Community</li>
+  <li className='feed-link'><FaVideo/>  Live</li>
 </ul>
 </div>
         

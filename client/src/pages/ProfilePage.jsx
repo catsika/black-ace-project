@@ -1,6 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState,useEffect} from 'react';
+import {FiEdit} from 'react-icons/fi'
+import UserFeed from '../components/UserFeed';
+import AboutUser from '../components/AboutUser';
+import Followers from '../components/Followers';
+import Community from '../components/Community';
+
 
 
 
@@ -21,27 +27,45 @@ export const Profile = () => {
     <div className="profile-container">
       {console.log(info)}
 
-
+<br />
+<br />
+<div className="likee">
 <div className="profile-image">
-  <img src={info.profileImage} alt="" />
+  <img src={info.profileImage} alt="" width={900} height={400} className='profile' />
+  <div className="add">
+  <FiEdit/> Edit profile
+  </div>
+
 </div>
 
-<div className="bio">
-  {info.Bio}
-</div>
 <div className="profile-username">
-  {info.username}
+<h3>{info.username}</h3>  
 </div>
-<div className="profile-birth">
+<hr className='line'/>
+{/* <div className="profile-birth">
  {info.birth}
 </div>
 <div className="profile-city">
-  {info.city}
+ <GoLocation/> {info.city}
+</div> */}
+
+<ul className='profile-links'>
+  <li className='profile-link'>posts</li>
+  <li className='profile-link'>about</li>
+  <li className='profile-link'>followers</li>
+  <li className='profile-link'>communities</li>
+</ul>
+
+
+
+
 </div>
-
-
-      <button className="submit"  onClick={logout}>logout</button>
-
+{/* render these components conditionally upon click */}
+<UserFeed/>
+<AboutUser/>
+<Followers/>
+<Community/>
+<button className="submit"  onClick={logout}>logout</button>
     </div>
 
   )
