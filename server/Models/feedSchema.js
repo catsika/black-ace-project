@@ -10,7 +10,7 @@ const feedSchema = new mongoose.Schema({
         required:false,
     },
     user:{
-        type:Array,
+        type:mongoose.Types.ObjectId,
         ref:"User",
         required:true,
     },

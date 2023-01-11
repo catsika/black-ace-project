@@ -103,7 +103,7 @@ const deleteFeed = async (req,res,next) => {
     const userId = req.params.id;
     let userFeed;
     try {
-      userFeed = await User.findById(userId).populate("feed");
+      userFeed = await User.findById(userId);
     } catch (err) {
       return console.log(err);
     }
