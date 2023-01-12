@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <><div className='nav'>
           <div className="home-logo">
-              AceHood
+            <a href="/feed"> AceHood</a>
 
           </div>
         {user &&  <><form className="nosubmit">

@@ -319,4 +319,12 @@ gap: 20px;
   color: black;
   
 }
+.userfeed{
+  display:grid;
+  place-content: center;
+  border:1px solid #fff;
+  width:50%;
+  margin-left: 200px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+}
 

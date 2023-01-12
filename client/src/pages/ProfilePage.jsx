@@ -25,7 +25,7 @@ export const Profile = () => {
 
   return (
     <div className="profile-container">
-      {console.log(info)}
+      
 
 <br />
 <br />
@@ -49,12 +49,7 @@ export const Profile = () => {
  <GoLocation/> {info.city}
 </div> */}
 
-<ul className='profile-links'>
-  <li className='profile-link'>posts</li>
-  <li className='profile-link'>about</li>
-  <li className='profile-link'>followers</li>
-  <li className='profile-link'>communities</li>
-</ul>
+
 
 
 
