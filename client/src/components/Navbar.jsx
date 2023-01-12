@@ -1,10 +1,15 @@
 import {FaCommentDots,FaBell,FaUserAlt} from "react-icons/fa"
+import {CiLogout} from 'react-icons/ci'
 import { useNavigate } from "react-router-dom";
 import { useEffect,useState } from "react";
 
 const Navbar = () => {
     const navigate = useNavigate()
     const [user,setuser] = useState("")
+    const logout=()=>{
+      localStorage.removeItem("userInfo");
+      navigate('/')
+   }
     useEffect(() => {
         const User = JSON.parse(localStorage.getItem("userInfo"));
         setuser(User)
@@ -28,6 +33,11 @@ const Navbar = () => {
                   </div>
                   <div className="user">
                    <a href="/profile" className="herl"><FaUserAlt size={25} /></a>
+                  </div>
+                  <div className="out">
+
+                    <CiLogout size={25} onClick={logout}/>
+                  
                   </div>
 
               </div></>

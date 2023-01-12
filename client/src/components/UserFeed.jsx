@@ -15,7 +15,7 @@ useEffect(()=>{
 
   return (
     <div>
-      <h1>Posts</h1>
+      <h1 className='user-title'>Posts</h1>
    {userfeed && userfeed.map((res)=>
 
      <><><div className="user-feed">

@@ -15,7 +15,7 @@ const Feed = () => {
 axios.get('http://localhost:5000/api/feed')
 .then((res)=>setFeed(res.data))
 .then((err)=>console.log(err))
-  },[feed])
+  },[])
 
 
   return (
@@ -27,7 +27,7 @@ axios.get('http://localhost:5000/api/feed')
   <hr className='hr' />
 
 <ul className='feed-links'>
-  <li className='feed-link'><CgFeed/> Feed</li>
+  <li className='feed-link'><a href="/createpost"><CgFeed/> Feed</a></li>
   <li className='feed-link'><RiCommunityLine/> Community</li>
   <li className='feed-link'><FaVideo/>  Live</li>
 </ul>
@@ -36,12 +36,10 @@ axios.get('http://localhost:5000/api/feed')
   <br /> 
 {feed && feed.map((res)=>
 
-  <><div className="feed">
+  <><div key={res._id} className="feed">
     <br />
     <br />
-    <div className=' '>
-      <div className="key" key={res.id}>
-        
+    <div className=' '> 
    <div className="intros">
   
         <br />
@@ -53,7 +51,7 @@ axios.get('http://localhost:5000/api/feed')
         <br />
         {res.description}
       </div>
-   </div>
+   
 <br/>
       <img src={res.image} alt="mages" className='feed-images' />
       <br />
@@ -77,6 +75,7 @@ axios.get('http://localhost:5000/api/feed')
 
 
 )}
+
 </div>
   
   
