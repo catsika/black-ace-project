@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Feed from "./pages/Feed";
 import ErrorPage from './components/Error'
 import Profile from './pages/ProfilePage';
+import CreateFeedPost from './components/CreateFeedPost';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
   <Route path='/feed' element={<Feed/>}/>
   <Route path='/profile' element={<Profile/>}/>
   <Route path='*' element={<ErrorPage/>}/>
+  <Route path='/createpost' element={<CreateFeedPost/>} />
 </Routes>
 </BrowserRouter>
     </div>

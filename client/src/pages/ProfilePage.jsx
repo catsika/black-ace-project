@@ -2,8 +2,9 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState,useEffect} from 'react';
 import {FiEdit} from 'react-icons/fi'
+import {GoLocation} from 'react-icons/go'
+import {BsCalendarDate} from 'react-icons/bs'
 import UserFeed from '../components/UserFeed';
-import AboutUser from '../components/AboutUser';
 import Followers from '../components/Followers';
 import Community from '../components/Community';
 
@@ -31,7 +32,21 @@ export const Profile = () => {
 <br />
 <div className="likee">
 <div className="profile-image">
-  <img src={info.profileImage} alt="" width={900} height={400} className='profile' />
+<div className="profile-intro">
+<img src={info.profileImage} alt="" width={500} height={400} className='profile' />
+ <div className="bio">
+  <h3>Bio</h3>
+<div className="user-info">
+<div className="profile-birth">
+ <BsCalendarDate/>  {info.birth}
+</div>
+<div className="profile-city">
+ <GoLocation />{info.city}
+</div> 
+</div>
+ {info.Bio}
+ </div>
+</div>
   <div className="add">
   <FiEdit/> Edit profile
   </div>
@@ -42,12 +57,7 @@ export const Profile = () => {
 <h3>{info.username}</h3>  
 </div>
 <hr className='line'/>
-{/* <div className="profile-birth">
- {info.birth}
-</div>
-<div className="profile-city">
- <GoLocation/> {info.city}
-</div> */}
+
 
 
 
@@ -55,12 +65,10 @@ export const Profile = () => {
 
 
 </div>
-{/* render these components conditionally upon click */}
+
 <UserFeed/>
-<AboutUser/>
 <Followers/>
 <Community/>
-<button className="submit"  onClick={logout}>logout</button>
     </div>
 
   )

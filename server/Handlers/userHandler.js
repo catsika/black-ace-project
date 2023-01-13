@@ -66,7 +66,7 @@ const register = async (req,res,next) =>{
      
     }
     const loginUser =  async(req,res) => {
-        const {email,password,feed} = req.body
+        const {email,password} = req.body
         const user = await User.findOne({email})
         if (user && (await bcrypt.compare(password,user.password))){
         res.json({
