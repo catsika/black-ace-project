@@ -8,6 +8,7 @@ import Feed from "./pages/Feed";
 import ErrorPage from './components/Error'
 import Profile from './pages/ProfilePage';
 import CreateFeedPost from './components/CreateFeedPost';
+import Forgot from './components/Forgot';
 
 function App() {
   return (
@@ -18,11 +19,13 @@ function App() {
 <Navbar/>
 <Routes>
   <Route path='/' element={<Login/>} />
-  <Route path='/register' element={<Register/>} />
   <Route path='/feed' element={<Feed/>}/>
   <Route path='/profile' element={<Profile/>}/>
   <Route path='*' element={<ErrorPage/>}/>
   <Route path='/createpost' element={<CreateFeedPost/>} />
+  <Route path='/register' element={<Register/>} />
+  <Route path='/forgot' element={<Forgot/>}/>
+
 </Routes>
 </BrowserRouter>
     </div>
