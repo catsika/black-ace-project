@@ -14,10 +14,7 @@ import Community from '../components/Community';
 export const Profile = () => {
   const [info,setInfo] = useState([])
   const navigate = useNavigate()
-  const logout=()=>{
-    localStorage.removeItem("userInfo");
-    navigate('/')
- }
+
  useEffect(() => {
   const user = JSON.parse(localStorage.getItem("userInfo"));
   setInfo(user)

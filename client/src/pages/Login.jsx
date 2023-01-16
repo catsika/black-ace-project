@@ -5,6 +5,7 @@ import {toast} from 'react-toastify'
 
 
 
+
 const Login = () => {
   
   const [password,setpassword]=useState('')
@@ -66,7 +67,7 @@ const Login = () => {
 </div>
 <hr />
 <div className="create">
-<a href="/register" className='lik'>Create Account</a>
+<a href="/register" className='lik' >Create Account</a>
 
 </div>
   </div>
