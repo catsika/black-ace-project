@@ -6,7 +6,7 @@ import {GoLocation} from 'react-icons/go'
 import {BsCalendarDate} from 'react-icons/bs'
 import UserFeed from '../components/UserFeed';
 import Followers from '../components/Followers';
-import Community from '../components/Community';
+import userCommunity from '../components/userCommunity';
 
 
 
@@ -65,7 +65,7 @@ export const Profile = () => {
 
 <UserFeed/>
 <Followers/>
-<Community/>
+<userCommunity/>
     </div>
 
   )

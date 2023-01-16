@@ -30,7 +30,7 @@ const postFeed = async (req,res) => {
       return res.status(400).json({message:"User not found"})
     }
 
-    const feed = await new Feed({
+    const feed =  new Feed({
         
         description,
         image,
@@ -44,7 +44,7 @@ const postFeed = async (req,res) => {
         const session = await mongoose.startSession()
         session.startTransaction()
         await feed.save({session})
-        existingUser.feed.push(feed)
+        existingUser.feed.unshift(feed)
         await existingUser.save({session})
         await session.commitTransaction()
      } catch (error) {
@@ -124,7 +124,7 @@ const deleteFeed = async (req,res,next) => {
     return res.status(400).json({message:"post not found"})
   }
 
-  const comment = await new Comment({
+  const comment =  new Comment({
     text,
     post
   })
@@ -146,7 +146,21 @@ const deleteFeed = async (req,res,next) => {
   const comments = await Comment.find({comment:Comment})
   res.status(200).json(comments)
   };
-  
+
+  const getCommentByPostId = async (req,res) =>{
+    const postsId = req.params.id;
+    let comments;
+    try {
+      comments = await Comment.findById(postsId);
+    } catch (err) {
+      return console.log(err);
+    }
+    if (!comments) {
+      return res.status(404).json({ message: "No comment Found" });
+    }
+    return res.status(200).json({ Comments: comments })
+  } 
+
 
 module.exports = {
     getFeed,
@@ -156,5 +170,6 @@ module.exports = {
    deleteFeed,
    getByUserId,
    addComment,
-   getComments
+   getComments,
+   getCommentByPostId
 }

@@ -162,11 +162,6 @@ a{
 .link{
   margin-left: 80px;
 }
-.social{
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
 .user-alt{
   color: black;
 }
@@ -354,4 +349,13 @@ width: 50%;
 height: 500px;
 margin-left: 350px;
 }
-
+.community-container{
+  display:grid;
+  place-content: center;
+  border:1px solid #fff;
+  width:50%;
+margin-top: 100px;
+}
+.sub-link{
+  color: black;
+}

@@ -21,7 +21,7 @@ const feedSchema = new mongoose.Schema({
     },
 
     likes:{
-        type:Number,
+       Array,
 
     },
     tags:{

@@ -27,6 +27,7 @@ const register = asynchandler(
       Bio,
       followers,
       following,
+      community
     } = req.body;
   
     if (!username || !email || !password) {
@@ -58,6 +59,7 @@ const register = asynchandler(
       followers,
       following,
       feed: [],
+      community
     })
   
     if(user){
@@ -92,6 +94,7 @@ const loginUser = asynchandler (
         Bio: user.Bio,
         followers: user.followers,
         following: user.following,
+        community:user.community
       });
     } else {
       res.status(400);

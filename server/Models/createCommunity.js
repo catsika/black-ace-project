@@ -18,7 +18,7 @@ const createCommunitySchema = new mongoose.Schema({
         ref:"Community",
         required:false},
     user:{
-        type:Array,
+        type:mongoose.Types.ObjectId,
         ref:"User",
         required:true,
     },
