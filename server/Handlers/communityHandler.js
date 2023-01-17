@@ -11,13 +11,17 @@ const getCommunity = async (req,res) => {
 }
 
 const getCommunityById = async (req,res) => {
-  const comId = req.params.id;
-  const communityId = await CreateCom.findById({_id:comId})
-  if(!communityId){
-    res.status(404).send("community not found")
-  }else{
-    res.status(200).json(communityId)
+  const {user} = req.body
+  let userCom;
+  try {
+    userCom = await CreateCom.findById(user);
+  } catch (err) {
+    return console.log(err);
   }
+  if (!userCom) {
+    return res.status(404).json({ message: "No feed Found" });
+  }
+  return res.status(200).json({ user: userCom });
 }
 
 

@@ -9,6 +9,7 @@ import ErrorPage from './components/Error'
 import Profile from './pages/ProfilePage';
 import CreateFeedPost from './components/CreateFeedPost';
 import Forgot from './components/Forgot';
+import Community from './components/Community';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
   <Route path='/createpost' element={<CreateFeedPost/>} />
   <Route path='/register' element={<Register/>} />
   <Route path='/forgot' element={<Forgot/>}/>
+  <Route path='/community' element={<Community/>} />
 
 </Routes>
 </BrowserRouter>

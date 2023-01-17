@@ -27,8 +27,8 @@ axios.get('http://localhost:5000/api/feed')
   <hr className='hr' />
 
 <ul className='feed-links'>
-  <li className='feed-link'><a href="/createpost"><CgFeed/> Feed</a></li>
-  <li className='feed-link'><RiCommunityLine/> Community</li>
+  <li className='feed-link'><a className='sub-link' href="/createpost"><CgFeed/> Feed</a></li>
+  <li className='feed-link'><RiCommunityLine/> <a className='sub-link' href="/community">Community</a></li>
   <li className='feed-link'><FaVideo/>  Live</li>
 </ul>
 </div>
