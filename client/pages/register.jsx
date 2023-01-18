@@ -8,10 +8,28 @@ const Register = () => {
   const [username, setName] = useState('');
   const [password, setpassword] = useState('');
   const [email, setEmail] = useState('');
-  const [profile, setPofile] = useState('');
+  const [profile, setProfile] = useState('');
   const [bio, setBio] = useState('');
   const [city, setCity] = useState('');
   const [birthDate, setBirthDate] = useState('');
+
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'your_upload_preset'); 
+
+    try {
+      const res = await axios.post('https://api.cloudinary.com/v1_1/your_cloud_name/image/upload', formData);
+      const imageUrl = res.data.secure_url;
+      setProfile(imageUrl);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,6 +62,7 @@ const Register = () => {
       .catch((error) => {
         toast.error(error.response.data);
       });
+
   };
   return (
     <div>
@@ -87,15 +106,16 @@ const Register = () => {
                 />
               </div>
               <br />
+
               <div className='file'>
                 <input
-                  type='text'
+                  type='file'
                   className='file'
                   placeholder='image'
-                  value={profile}
-                  onChange={(e) => setPofile(e.target.value)}
+                  onChange={handleFileChange}
                 />
               </div>
+
               <br />
               <div className='Bio'>
                 <textarea
