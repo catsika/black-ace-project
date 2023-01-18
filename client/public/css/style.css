@@ -1,0 +1,361 @@
+.home-logo{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color:blueviolet;
+    margin-left: 10px;
+  }
+  form.nosubmit {
+    border: none;
+    padding: 0;
+   
+  }
+  
+  input.nosubmit {
+    width: 260px;
+    border: 1px solid #555;
+    display: block;
+    padding: 9px 4px 9px 40px;
+    border-radius: 10px;
+    width: 400px;
+  
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  }
+  .input.nosubmit:hover{
+    background-color: black;
+    color: #fff;
+  }
+  .nav{
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    position:fixed;
+    top: -30;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+    margin-top:0px
+  
+  }
+  .icons{
+    display: flex;
+    gap: 32px;
+    margin-top: 8px;
+    margin-right: 20px;
+    color:darkgray
+  }
+  .introd{
+    width: 400px;
+    margin-top:50px
+  }
+  .head-text{
+    color: blueviolet;
+  }
+  .para{
+    font-size: 1.4rem;
+  }
+  .reg-text{
+    color: blueviolet;
+  }
+  .parami{
+    font-size: 1.4rem;
+  }
+  input{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+  }
+  textarea{
+    width: 400px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+  
+   
+  }
+  select,option{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+  }
+  .submit{
+    border: 1px solid blue;
+    width: 400px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-color: blue;
+   color:#fff;
+   font-size: 1.3rem;
+   cursor: pointer;
+  
+  }
+  .login-form{
+    border: 1px solid #fff;
+    width: 430px;
+    height: 300px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+  }
+  .register-form{
+    border: 1px solid #fff;
+    width: 430px;
+    height: 580px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+  }
+  .param{
+    margin-left: 10px;
+    margin-top: 17px;
+  }
+  .forgot{
+    color: blue;
+    display: flex;
+    justify-content: center;
+    margin-top: 17px;
+  }
+  a{
+    text-decoration: none;
+    color: blue;
+  }
+  .create{
+    border: 1px solid #fff;
+    width: 300px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:green;
+    
+   font-size: 1.3rem;
+   margin-left: 50px;
+  }
+  .lik{
+    color: white;
+  }
+  
+  .Login{
+    display: flex;
+    gap: 50px;
+    margin-left: 200px;
+    margin-top: 100px;
+    
+  }
+  .register{
+    display: flex;
+    gap: 50px;
+    margin-left: 200px;
+    margin-top: 50px;
+  }
+  .intro{
+    width: 400px;
+  }
+  .form-link{
+    color:#fff ;
+  }
+  .link{
+    margin-left: 80px;
+  }
+  .user-alt{
+    color: black;
+  }
+  .herl{
+    color:darkgray
+  }
+  .feed{
+    display:grid;
+    place-content: center;
+    border:1px solid #fff;
+    width:50%;
+    margin: 0 auto;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+  }
+  .descr{
+    width: 400px;
+  }
+  .reactions{
+    display: flex;
+    justify-content:center ;
+    gap: 32px;
+    align-items: center;
+    font-size: 1.2rem;
+    
+  }
+  .like{
+    border: 1px solid #fff;
+   
+  }
+  .like:hover{
+    color:blue
+  }
+  .share{
+    border: 1px solid #fff;
+   
+  }
+  .share:hover{
+    color: darkgray;
+  }
+  .comment{
+    border: 1px solid #fff;
+  
+  }
+  .comment:hover{
+    color: #555;
+  }
+  .feed-links{
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    border:1px solid #fff ;
+    height: 60px;
+    width:630px ;
+   
+   
+  }
+  .feed-link{
+    font-size:1.4rem;
+    margin-left: 70px;
+   
+  }
+  .list{
+    text-decoration: underline blue;
+  }
+  .post-field{
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    text-align: center;
+    margin-left:130px;
+    margin-top: 50px;
+    background-color: #ccc;
+  }
+  .hr{
+    width: 480px;
+  }
+  .others{
+    border: 1px solid #fff;
+    width: 680px;
+    margin: 0 auto;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+    
+  }
+  .profile{
+    border-radius: 10px;
+    margin-left: 200px;
+  }
+  .bio{
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 120px;
+  }
+  .profile-container{
+    display: grid;
+    
+  
+  }
+  .profile-username{
+    font-weight: bold;
+    font-size: large;
+    margin-left: 220px;
+    margin-top: -45px;
+    display: flex;
+    gap: 8px;
+    text-transform: capitalize;
+  }
+  .profile-birth{
+    font-weight: bold;
+  }
+  .profile-city{
+    font-weight: bold;
+    /* margin-left: 320px;
+    margin-top: -45px; */
+  }
+  .add{
+    border: 1px solid blue;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: #fff;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 248px;
+  }
+  
+  .profile-link{
+  
+    font-size:1.4rem;
+    display: flex;
+  }
+    
+  .profile-links{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+  
+  
+  
+  }
+  .likee{
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+  }
+  .line{
+    width: 900px;
+  }
+  .a{
+    color: black;
+    
+  }
+  .user-feed{
+    display:grid;
+    place-content: center;
+    border:1px solid #fff;
+    width:50%;
+    margin-left: 50px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+  }
+  .user-title{
+    margin-left: 350px;
+  }
+  .profile-intro{
+    display: flex;
+    gap: 32px;
+  }
+  .user-info{
+    display: flex;
+    margin-bottom: 10px;
+    gap: 24px;
+  }
+  .out{
+    cursor: pointer;
+  }
+  .post-container{
+  margin-top: 100px;
+  display: grid;
+  place-content: center;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: 500px;
+  margin-left: 350px;
+  }
+  .community-container{
+    display:grid;
+    place-content: center;
+    border:1px solid #fff;
+    width:50%;
+  margin-top: 100px;
+  }
+  .sub-link{
+    color: black;
+  }
